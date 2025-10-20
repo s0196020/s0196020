@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости заказа</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h2 class="h5 mb-0">Калькулятор стоимости заказа</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="calculatorForm">
+                            
+                            <div class="mb-3">
+                                <label for="product" class="form-label">Выберите товар:</label>
+                                <select id="product" class="form-select" required>
+                                <option value="" disabled selected> Выберите сладость</option>
+                                <option value="150">Круассан - 150 руб.</option>
+                                <option value="300">Наполеон - 300 руб.</option>
+                                <option value="220">Чизкейк - 220 руб.</option>
+                                <option value="120">Печенье - 120 руб.</option>
+                                <option value="250">Тирамису - 250 руб.</option>
+                                </select>
+                            </div>
+
+                           
+                            <div class="mb-3">
+                                <label for="quantity" class="form-label">Количество товара:</label>
+                                <input type="text" 
+                                       id="quantity" 
+                                       class="form-control" 
+                                       placeholder="Введите количество"
+                                       required
+                                       pattern="^[1-9][0-9]*$">
+                                <div class="form-text">Только целые положительные числа</div>
+                                <div id="quantityError" class="invalid-feedback" style="display: none;">
+                                    Пожалуйста, введите корректное количество (только цифры, больше 0)
+                                </div>
+                            </div>
+
+                            
+                            <div class="mb-3">
+                                <button type="button" id="calculateBtn" class="btn btn-secondary w-100">
+                                    Рассчитать стоимость
+                                </button>
+                            </div>
+
+                            
+                            <div id="result" class="alert alert-info" style="display: none;">
+                                <h6 class="alert-heading">Стоимость заказа:</h6>
+                                <p id="resultText" class="mb-0"></p>
+                            </div>
+
+                            
+                            <div id="errorMessage" class="alert alert-danger" style="display: none;">
+                                <p id="errorText" class="mb-0"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white py-4 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; Карина Базалеева</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="calculator.js" defer></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
